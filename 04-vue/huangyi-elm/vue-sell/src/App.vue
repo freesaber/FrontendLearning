@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <v-header></v-header>
+    <v-header :seller="seller"></v-header>
     <div class="tab">
       <div class="tab-item">
         <router-link to="goods">商品</router-link>
@@ -34,7 +34,6 @@ export default {
       var res = response.data;
       if (res.code == 0) {
         this.seller = res.data;
-        console.log(this.seller);
       }
     })
   },
@@ -45,6 +44,7 @@ export default {
 
   },
   mounted() {
+    // 首页载入完成后，加载goods路由
     this.$router.push('/goods');
   },
   methods: {
@@ -54,7 +54,7 @@ export default {
 </script>
 
 <style lang="scss">
-  @import "./common/scss/mixins";
+  @import "./assets/scss/mixins";
 
   .tab{
     display: flex;
