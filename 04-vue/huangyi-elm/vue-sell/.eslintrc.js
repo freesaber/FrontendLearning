@@ -13,7 +13,8 @@ module.exports = {
     'semi': 0,// 结尾可以有分号
     'space-before-function-paren': 0,// 方法后可以不需要空格
     'eqeqeq':0,// 可以使用==进行判断
-    'no-unused-vars':0// 可以有变量不被使用
+    'no-unused-vars':0,// 可以有变量不被使用
+    'no-unused-components':0//可以有注册但未被使用的组件
   },
   parserOptions: {
     parser: 'babel-eslint'

@@ -37,24 +37,33 @@
                   <span class="now">￥{{food.price}}</span>
                   <span v-show="food.oldPrice" class="old">￥{{food.oldPrice}}</span>
                 </div>
+                <div class="cartcontrol-wrapper">
+                  <cartcontrol :food="food"></cartcontrol>
+                </div>
               </div>
             </li>
           </ul>
         </li>
       </ul>
     </div>
+    <shopcart :select-foods="selectFoods" :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice"></shopcart>
   </div>
 </template>
 
 <script>
 import BScroll from '@better-scroll/core'
+import shopcart from '../components/goods/shopcart'
+import cartcontrol from '../components/common/cartcontrol/cartcontrol'
 
 export default {
   name: 'goods',
   props: {
     seller: Object
   },
-  components: {},
+  components: {
+    shopcart,
+    cartcontrol
+  },
   data () {
     return {
       typeClassMap: {
@@ -107,6 +116,17 @@ export default {
         }
       }
       return 0;
+    },
+    // 选择的商品
+    selectFoods() {
+      let foods = [];
+      this.goods.forEach(good => {
+        var temp = good.foods.filter(food => {
+          return food.count && food.count > 0;
+        });
+        foods.push(...temp);
+      });
+      return foods;
     }
   },
   watch: {
@@ -121,7 +141,8 @@ export default {
         click: true
       });
       this.foodsScroll = new BScroll(this.$refs.foodsWrapper, {
-        probeType: 3
+        probeType: 3,
+        click: true
       });
       this.foodsScroll.on('scroll', (pos) => {
         this.scrollY = Math.abs(Math.round(pos.y));// 实时获取滚动位置
@@ -138,6 +159,7 @@ export default {
         this.listHeight.push(height);
       }
     },
+    // 点击菜单，定位商品dom
     selectMenu(index) {
       let foodList = this.$refs.foodsWrapper.getElementsByClassName('food-list-hook');
       let el = foodList[index];
@@ -242,6 +264,7 @@ export default {
         }
         .content{
           flex: 1;
+          position: relative;
           .name{
             margin: 2px 0 8px 0;
             height: 14px;
@@ -277,6 +300,11 @@ export default {
               font-size: 10px;
               color: rgb(147, 153, 159);
             }
+          }
+          .cartcontrol-wrapper{
+            position: absolute;
+            right: 0;
+            bottom: 12px;
           }
         }
       }
