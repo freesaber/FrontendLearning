@@ -1,8 +1,8 @@
 <template>
   <div class="cartcontrol">
     <transition name="slide-fade">
-      <div class="cart-decrease" v-show="food.count > 0" @click="decreaseCart">
-        <i class="inner icon-remove_circle_outline"></i>
+      <div class="cart-decrease" v-if="food.count > 0" @click="decreaseCart">
+          <i class="inner icon-remove_circle_outline"></i>
       </div>
     </transition>
     <div class="cart-count" v-show="food.count > 0">{{food.count}}</div>
@@ -62,17 +62,19 @@ export default {
       display: inline-block;
       vertical-align: top;
       padding: 6px;
-      &.slide-fade-enter-active {
+      &.slide-fade-enter-active, &.slide-fade-leave-active{
         transition: all .4s linear;
       }
-      &.slide-fade-leave-active {
-        transition: all .4s linear;
-      }
-      &.slide-fade-enter, .slide-fade-leave-to{
-        transform: translateX(10px);
+      &.slide-fade-enter, &.slide-fade-leave-to{
         opacity: 0;
+        transform: translate3d(24px, 0, 0);//动画开始，水平反向移动24px
+      }
+      &.slide-fade-enter-to, &.slide-fade-leave{
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
       }
       .inner{
+        display: inline-block;
         font-size: 24px;
         line-height: 24px;
         color: rgb(0, 160, 220);
