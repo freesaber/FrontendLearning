@@ -14,11 +14,26 @@
       <div class="content-right">
         <div class="pay" :class="payClass">{{payDesc}}</div>
       </div>
+      <div class="ball-container">
+        <transition-group
+          name="drop"
+          tag="div"
+          v-on:before-enter="beforeEnter"
+          v-on:enter="enter"
+          v-on:after-enter="afterEnter"
+        >
+          <div v-for="ball in dropBalls" :key="ball.index" :data-index="ball.index" class="ball">
+            <div class="inner"></div>
+          </div>
+        </transition-group>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import Velocity from 'velocity-animate'
+
 export default {
   name: 'shopcart',
   props: {
@@ -42,7 +57,7 @@ export default {
   },
   data() {
     return {
-
+      balls: []
     }
   },
   created() {
@@ -81,8 +96,12 @@ export default {
       } else {
         return 'not-enough';
       }
+    },
+    dropBalls() {
+      return this.balls.filter(ball => {
+        return ball.show == true;
+      });
     }
-
   },
   watch: {
 
@@ -91,7 +110,40 @@ export default {
 
   },
   methods: {
-
+    drop(el) {
+      var ball = {
+        index: this.balls.length,
+        el: el, // 点击的“加号”的元素
+        show: true
+      }
+      this.balls.push(ball);
+    },
+    beforeEnter: function (el) {
+      // 设置球的起始位置
+      let ball = this.balls[el.dataset.index];
+      let rect = ball.el.getBoundingClientRect();
+      el.style.left = (rect.left + 10) + 'px';
+      el.style.top = (rect.top + 10) + 'px';
+    },
+    enter: function (el, done) {
+      // 计算和终点位置的差
+      let ball = this.balls[el.dataset.index];
+      let rect = ball.el.getBoundingClientRect();
+      let translateX = -(rect.left - 25) + 'px';
+      let translateY = (window.innerHeight - rect.top - 52) + 'px';
+      Velocity(el,
+        { translateY: translateY },
+        { easing: [0.49, -0.29, 0.75, 0.41], queue: false }
+      );
+      Velocity(el,
+        { translateX: translateX },
+        { duration: 400, easing: 'easeInSine', complete: done }
+      );
+    },
+    afterEnter: function (el) {
+      let ball = this.balls[el.dataset.index];
+      ball.show = false;
+    }
   }
 }
 </script>
@@ -200,6 +252,18 @@ export default {
         background: #00b43c;
         color: #fff;
         cursor: pointer;
+      }
+    }
+  }
+  .ball-container{
+    .ball{
+      position: fixed;
+      z-index: 200;
+      .inner{
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: rgb(0, 160, 220);
       }
     }
   }
