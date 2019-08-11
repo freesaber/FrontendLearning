@@ -1,12 +1,12 @@
 <template>
   <div class="cartcontrol">
     <transition name="slide-fade">
-      <div class="cart-decrease" v-if="food.count > 0" @click="decreaseCart">
+      <div class="cart-decrease" v-if="food.count > 0" @click.stop.prevent="decreaseCart">
           <i class="inner icon-remove_circle_outline"></i>
       </div>
     </transition>
     <div class="cart-count" v-show="food.count > 0">{{food.count}}</div>
-    <div class="cart-add icon-add_circle" @click="addCart"></div>
+    <div class="cart-add icon-add_circle" @click.stop.prevent="addCart"></div>
   </div>
 </template>
 
@@ -56,7 +56,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .cartcontrol{
     font-size: 0;
     .cart-decrease{

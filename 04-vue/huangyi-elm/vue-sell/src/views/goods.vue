@@ -22,7 +22,7 @@
         <li v-for="item in goods" :key="item.name" class="food-list food-list-hook">
           <h1 class="title">{{item.name}}</h1>
           <ul>
-            <li v-for="food in item.foods" :key="food.name" class="food-item border-1px">
+            <li @click="selectFood(food,$event)" v-for="food in item.foods" :key="food.name" class="food-item border-1px">
               <div class="icon">
                 <img width="57" height="57" :src="food.icon">
               </div>
@@ -47,13 +47,15 @@
       </ul>
     </div>
     <shopcart ref="shopcart" :select-foods="selectFoods" :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice"></shopcart>
+    <food ref="food" :food="selectedFood" @addCart="addCart"></food>
   </div>
 </template>
 
 <script>
 import BScroll from '@better-scroll/core'
 import shopcart from '../components/goods/shopcart'
-import cartcontrol from '../components/common/cartcontrol/cartcontrol'
+import cartcontrol from '../components/common/cartcontrol'
+import food from '../components/goods/food'
 
 export default {
   name: 'goods',
@@ -62,7 +64,8 @@ export default {
   },
   components: {
     shopcart,
-    cartcontrol
+    cartcontrol,
+    food
   },
   data () {
     return {
@@ -90,7 +93,8 @@ export default {
       },
       goods: [],
       listHeight: [],
-      scrollY: 0
+      scrollY: 0,
+      selectedFood: {}
     }
   },
   created() {
@@ -168,12 +172,16 @@ export default {
     // 添加购物车事件
     addCart(target) {
       this.$refs.shopcart.drop(target);
+    },
+    selectFood(food, event) {
+      this.selectedFood = food;
+      this.$refs.food.show();
     }
   }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   @import "../assets/scss/mixins";
 
   .goods{

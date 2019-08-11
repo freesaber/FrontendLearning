@@ -60,7 +60,7 @@
 
 <script>
 import Velocity from 'velocity-animate'
-import cartcontrol from '../common/cartcontrol/cartcontrol'
+import cartcontrol from '../common/cartcontrol'
 import BScroll from '@better-scroll/core'
 
 export default {
@@ -226,7 +226,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   @import "../../assets/scss/mixins";
 
   .shopcart{

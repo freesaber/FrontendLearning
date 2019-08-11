@@ -78,7 +78,7 @@
 </template>
 
 <script>
-import star from '../common/star/star'
+import star from '../common/star'
 
 export default {
   name: 'v-header',
@@ -128,7 +128,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   @import "../../assets/scss/mixins";
 
   // 头部整体样式
