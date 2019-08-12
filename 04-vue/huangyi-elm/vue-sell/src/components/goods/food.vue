@@ -19,7 +19,7 @@
             <span class="old" v-show="food.oldPrice">￥{{food.oldPrice}}</span>
           </div>
           <div class="cartcontrol-wrapper">
-            <cartcontrol :food="food" v-if="food.count"></cartcontrol>
+            <cartcontrol @addCart="addCart" :food="food" v-show="food.count"></cartcontrol>
           </div>
           <div @click.stop.prevent="addFirst($event)" class="buy" v-show="!food.count || food.count === 0">加入购物车</div>
         </div>
@@ -85,6 +85,9 @@ export default {
     addFirst(event) {
       this.$set(this.food, 'count', 1);
       this.$emit('addCart', event.target);
+    },
+    addCart(target) {
+      this.$emit('addCart', target);
     }
   }
 }
