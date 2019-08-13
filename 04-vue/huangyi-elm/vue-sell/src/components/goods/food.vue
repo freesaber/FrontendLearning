@@ -28,6 +28,18 @@
           <h1 class="title">商品信息</h1>
           <p class="text">{{food.info}}</p>
         </div>
+        <split></split>
+        <div class="rating">
+          <h1 class="title">商品评价</h1>
+          <ratingselect
+            :select-type="selectType"
+            :only-content="onlyContent"
+            :desc="desc"
+            :ratings="food.ratings"
+            @ratingTypeChange="ratingTypeChange"
+            @toggleContent="toggleContent"
+          ></ratingselect>
+        </div>
       </div>
     </div>
   </transition>
@@ -37,6 +49,11 @@
 import BScroll from '@better-scroll/core'
 import cartcontrol from '../common/cartcontrol'
 import split from '../common/split'
+import ratingselect from '../common/ratingselect'
+
+const POSITIVE = 0; // 正面评价
+const NEGATIVE = 1; // 负面评价
+const ALL = 2; // 所有
 
 export default {
   name: 'food',
@@ -47,11 +64,19 @@ export default {
   },
   components: {
     cartcontrol,
-    split
+    split,
+    ratingselect
   },
   data() {
     return {
-      showFlag: false
+      showFlag: false,
+      selectType: ALL,
+      onlyContent: false,
+      desc: {
+        all: '全部',
+        positive: '推荐',
+        negative: '吐槽'
+      }
     }
   },
   created() {
@@ -69,6 +94,12 @@ export default {
   methods: {
     show() {
       this.showFlag = true;
+
+      // 重置
+      this.selectType = ALL;
+      this.onlyContent = false;
+
+      // 滚动
       this.$nextTick(() => {
         if (!this.scroll) {
           this.scroll = new BScroll(this.$refs.food, {
@@ -88,6 +119,12 @@ export default {
     },
     addCart(target) {
       this.$emit('addCart', target);
+    },
+    ratingTypeChange(type) {
+      this.selectType = type;
+    },
+    toggleContent() {
+      this.onlyContent = !this.onlyContent;
     }
   }
 }
@@ -211,7 +248,16 @@ export default {
           color: rgb(77, 85, 93);
         }
       }
-    }
 
+      .rating{
+        padding-top: 18px;
+        .title{
+          line-height: 14px;
+          margin-left: 18px;
+          font-size: 14px;
+          color: rgb(7, 17, 27);
+        }
+      }
+    }
   }
 </style>
