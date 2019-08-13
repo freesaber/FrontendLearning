@@ -40,6 +40,25 @@
             @toggleContent="toggleContent"
           ></ratingselect>
         </div>
+        <div class="rating-wrapper">
+          <ul v-if="food.ratings && food.ratings.length">
+            <li v-show="needShow(rating)" v-for="rating in food.ratings" :key="rating.rateTime" class="rating-item border-1px">
+              <div class="user">
+                <span class="name">{{rating.username}}</span>
+                <img class="avatar" width="12" height="12" :src="rating.avatar">
+              </div>
+              <div class="time">
+                {{formatRateTime(rating.rateTime)}}
+              </div>
+              <p class="text">
+                <span class="icon-thumb_up" v-if="rating.rateType === 0"></span>
+                <span class="icon-thumb_down" v-else></span>
+                {{rating.text}}
+              </p>
+            </li>
+          </ul>
+          <div class="no-rating" v-else>暂无评价</div>
+        </div>
       </div>
     </div>
   </transition>
@@ -50,6 +69,7 @@ import BScroll from '@better-scroll/core'
 import cartcontrol from '../common/cartcontrol'
 import split from '../common/split'
 import ratingselect from '../common/ratingselect'
+import { formatDate } from '../../assets/js/date'
 
 const POSITIVE = 0; // 正面评价
 const NEGATIVE = 1; // 负面评价
@@ -122,15 +142,40 @@ export default {
     },
     ratingTypeChange(type) {
       this.selectType = type;
+      this.$nextTick(() => {
+        this.scroll.refresh();
+      })
     },
     toggleContent() {
       this.onlyContent = !this.onlyContent;
+      this.$nextTick(() => {
+        this.scroll.refresh();
+      })
+    },
+    needShow(rating) {
+      if (this.onlyContent) {
+        if (this.selectType == ALL) {
+          return rating.text;
+        }
+        return rating.rateType == this.selectType && rating.text;
+      } else {
+        if (this.selectType == ALL) {
+          return true;
+        }
+        return rating.rateType == this.selectType;
+      }
+    },
+    formatRateTime(rateTime) {
+      var time = new Date(rateTime);
+      return formatDate(time, 'yyyy-MM-dd hh-mm');
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+  @import "../../assets/scss/mixins";
+
   .food{
     position: fixed;
     left: 0;
@@ -256,6 +301,61 @@ export default {
           margin-left: 18px;
           font-size: 14px;
           color: rgb(7, 17, 27);
+        }
+      }
+
+      .rating-wrapper{
+        padding: 0 18px;
+        .rating-item{
+          position: relative;
+          padding: 16px 0;
+          @include border-1px(rgba(7, 17, 27, 0.1));
+          .user{
+            position: absolute;
+            right: 0;
+            top: 16px;
+            font-size: 0;
+            line-height: 12px;
+            .name{
+              display: inline-block;
+              vertical-align: top;
+              margin-right: 6px;
+              font-size: 10px;
+              color: rgb(147, 153, 157);
+            }
+            .avatar{
+              display: inline-block;
+              vertical-align: top;
+              border-radius: 50%;
+            }
+          }
+          .time{
+            margin-bottom: 6px;
+            line-height: 12px;
+            font-size: 10px;
+            color: rgb(147, 153, 159);
+          }
+          .text{
+            line-height: 16px;
+            font-size: 12px;
+            color: rgb(7, 17, 27);
+            .icon-thumb_up, .icon-thumb_down{
+              margin-right: 4px;
+              line-height: 16px;
+              font-size: 12px;
+            }
+            .icon-thumb_up{
+              color: rgb(0, 160, 220);
+            }
+            .icon-thumb_down{
+              color: rgb(147, 153, 159);
+            }
+          }
+        }
+        .no-rating{
+          padding: 16px 0;
+          font-size: 12px;
+          color: rgb(147, 153, 159);
         }
       }
     }
