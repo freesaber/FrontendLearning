@@ -92,7 +92,10 @@ export default {
       .star-item{
         width: 15px;
         height: 15px;
-        margin-right: 16px;
+        @media only screen and (max-width: 320px){
+          margin-right: 5px!important;
+        }
+        margin-right: 10px;
         background-size: 15px 15px;
         &:last-child{
           margin-right: 0;
