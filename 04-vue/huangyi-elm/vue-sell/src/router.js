@@ -7,7 +7,7 @@ import seller from './views/seller.vue'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  // mode: 'history', 该模式会导致刷新404
   base: process.env.BASE_URL,
   routes: [
     {
