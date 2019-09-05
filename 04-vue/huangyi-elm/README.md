@@ -7,3 +7,5 @@
 1. mock目录和vue-sell目录下都没有包，需要分别进入/mock和vue-sell下面，通过yarn install 或者 npm install安装包。
 2. 调试前，先进入/mokc/bin/，执行node www，开启数据模拟服务。然后在vue-sell目录下执行yarn serve或npm run serve运行项目。
 3. 发布时，先到vue-sell中执行yarn build或npm run build,拷贝/vue-sell/dist目录下的所有文件到/mock/public下面，然后只需启动Express，就可以在http://localhost:8080查看结果。
+
+发布地址：[http://huangyielm.freesaber.cn](http://huangyielm.freesaber.cn)
