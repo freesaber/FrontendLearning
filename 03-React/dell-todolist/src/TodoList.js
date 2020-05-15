@@ -1,6 +1,7 @@
 import React,{ Component, Fragment } from 'react';
 import './style.css';
 import TodoItem from './TodoItem';
+import axios from 'axios'
 
 class TodoList extends Component{
   // 初始化，Intialization
@@ -17,8 +18,8 @@ class TodoList extends Component{
   }
 
   // 在组件即将被挂载到页面的时刻自动执行（挂载：组件第一次被放到页面上）
-  componentWillMount() {
-  }
+  // componentWillMount() {
+  // }
   
   // 组件被更新之前，它会被自动执行
   shouldComponentUpdate() {
@@ -26,8 +27,8 @@ class TodoList extends Component{
   }
 
   // 组件被更新之前，它会自动执行，但是它在shouldComponentUpdate之后执行，并且shouldComponentUpdate返回true才执行
-  componentWillUpdate() {
-  }
+  // componentWillUpdate() {
+  // }
 
   // 组件的挂载和更新都会执行，渲染更新DOM
   // Mounting:componentWillMount --> render --> componentDidMount
@@ -53,18 +54,36 @@ class TodoList extends Component{
     );
   }
 
-  // 组件被挂载到页面之后，自动执行
+  // 组件被挂载到页面之后，自动执行(一般在这里执行ajax)
   componentDidMount() {
+    axios.get('http://localhost:8080/api/todolist')
+    .then((res) => {
+      this.setState(() => {
+        return {
+          list: [...res.data.data]
+        }
+      });
+    })
+    .catch(() => {
+      alert('error');
+    })
   }
 
   // 组件被更新之后，自动执行
-  componentDidUpdate() {
-  }
+  // componentDidUpdate() {
+  // }
 
-  // 当一个组件从父组件接收了参数，只要父组件的render函数被执行了，子组件的这个生命周期函数就会被执行
-  componentWillReceiveProps() {
+  // 当一个组件从父组件接收了参数
+  // 如果这个组件第一次存在于父组件中，不会被执行
+  // 如果这个组件之前已经存在于父组件中，只要父组件的render函数被执行了，子组件的这个生命周期函数就会被执行
+  // componentWillReceiveProps() {
 
-  }
+  // }
+
+  // 当这个组件即将被从页面中剔除的时候，会执行
+  // componentWillUnmount() {
+
+  // }
 
   getTOdoItem() {
     return this.state.list.map((item, index) => {
