@@ -29,7 +29,7 @@
 1 React 16.x
 - [React开发简书项目 从零基础入门到实战](https://coding.imooc.com/class/chapter/229.html)
 - [当React遇上TypeScript开发Antd组件](https://www.imooc.com/learn/1234)
-- [React服务器渲染原理解析与实践](https://coding.imooc.com/class/chapter/276.html)
+- [React Hooks视频教程](https://www.bilibili.com/video/BV1y4411Q7yH)
 
 2. React 17.x
 - [React 17 系统精讲 结合TS打造旅游电商平台](https://coding.imooc.com/class/chapter/475.html)
