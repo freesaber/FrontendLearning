@@ -33,13 +33,15 @@
 - [React Hooks详解](https://www.bilibili.com/video/BV1VE411w7wi)
 - [当React遇上TypeScript开发Antd组件](https://www.imooc.com/learn/1234)
 - [React+TypeScript高仿AntDesign开发企业级UI组件库](https://coding.imooc.com/class/chapter/428.html)
-- [Umi 3+Dva入门实践 完成用户管理的CRUD应用](https://www.bilibili.com/video/BV1qz411z7s3)
-- [React+UmiJS+Antd Pro项目全程实录](https://www.bilibili.com/video/BV1i5411c7xp)
-- [用 React+React Hook+Egg 造轮子 全栈开发旅游电商应用](https://coding.imooc.com/class/chapter/452.html)
 
 2. React 17.x
 - [React 17 系统精讲 结合TS打造旅游电商平台](https://coding.imooc.com/class/chapter/475.html)
 - [React17+React Hook+TS4 最佳实践 仿 Jira 企业级项目](https://coding.imooc.com/class/chapter/482.html)
+
+3. Ant Design Pro
+- [Umi 3+Dva入门实践 完成用户管理的CRUD应用](https://www.bilibili.com/video/BV1qz411z7s3)
+- [React+UmiJS+Antd Pro项目全程实录](https://www.bilibili.com/video/BV1i5411c7xp)
+- [用 React+React Hook+Egg 造轮子 全栈开发旅游电商应用](https://coding.imooc.com/class/chapter/452.html)
 
 ## 06-flutter
 - [Flutter入门 3小时完成微信读书发现界面](https://www.imooc.com/learn/1170)
