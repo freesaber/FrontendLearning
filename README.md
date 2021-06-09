@@ -34,6 +34,7 @@
 - [当React遇上TypeScript开发Antd组件](https://www.imooc.com/learn/1234)
 - [React+TypeScript高仿AntDesign开发企业级UI组件库](https://coding.imooc.com/class/chapter/428.html)
 - [Umi 3+Dva入门实践 完成用户管理的CRUD应用](https://www.bilibili.com/video/BV1qz411z7s3)
+- [React+UmiJS+Antd Pro项目全程实录](https://www.bilibili.com/video/BV1i5411c7xp)
 
 2. React 17.x
 - [React 17 系统精讲 结合TS打造旅游电商平台](https://coding.imooc.com/class/chapter/475.html)
