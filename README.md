@@ -30,7 +30,6 @@
 - [React开发简书项目 从零基础入门到实战](https://coding.imooc.com/class/chapter/229.html)
 - [React全家桶+AntD共享单车后台管理系统开发](https://coding.imooc.com/class/chapter/236.html)
 - [React Hooks2小时快速入门](https://www.imooc.com/learn/1288)
-- [React Hooks详解](https://www.bilibili.com/video/BV1VE411w7wi)
 - [当React遇上TypeScript开发Antd组件](https://www.imooc.com/learn/1234)
 - [React+TypeScript高仿AntDesign开发企业级UI组件库](https://coding.imooc.com/class/chapter/428.html)
 
