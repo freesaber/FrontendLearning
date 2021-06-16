@@ -6,8 +6,21 @@
 
 2. css
 
-## 02-js、ts、打包
+## 03-es
+1. js
+
+2. es6
+- [ECMAscript6精通系列（基础篇）](https://ke.qq.com/course/386822)
+- [再学JavaScript ES(6-11)全版本语法大全](https://coding.imooc.com/class/chapter/444.html)
+
+3. ts
 - [2小时极速入门 TypeScript](https://www.imooc.com/learn/1306)
+- [TypeScript 系统入门到项目实战](https://coding.imooc.com/class/chapter/412.html)
+
+4. node
+
+5. webpack
+- [从基础到实战 手把手带你掌握新版Webpack4.0](https://coding.imooc.com/class/chapter/316.html)
 
 
 ## 03-小程序、公众号
