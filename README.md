@@ -8,6 +8,8 @@
 
 ## 03-es
 1. js
+- [JavaScript深入浅出](https://www.imooc.com/learn/277)
+- [后盾网JavaScript视频教程--guon](https://pan.baidu.com/s/1QQnz9MECdimod6tG6Cv-SA)
 
 2. es6
 - [ECMAscript6精通系列（基础篇）](https://ke.qq.com/course/386822)
@@ -20,6 +22,7 @@
 4. node
 
 5. webpack
+- [Webpack 从入门到精通](https://ke.qq.com/course/414203)
 - [从基础到实战 手把手带你掌握新版Webpack4.0](https://coding.imooc.com/class/chapter/316.html)
 
 
