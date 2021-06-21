@@ -48,7 +48,6 @@
 - [React Hooks2小时快速入门](https://www.imooc.com/learn/1288)
 
 2. React+Ts
-- [当 React Native 遇到 TypeScript](https://www.imooc.com/learn/1169)
 - [当React遇上TypeScript开发Antd组件](https://www.imooc.com/learn/1234)
 - [React+TypeScript高仿AntDesign开发企业级UI组件库](https://coding.imooc.com/class/chapter/428.html)
 - [React 17 系统精讲 结合TS打造旅游电商平台](https://coding.imooc.com/class/chapter/475.html)
