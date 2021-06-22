@@ -27,14 +27,16 @@
 
 
 ## 03-小程序、公众号
-1. 小程序
+1. 微信小程序
 - [入门微信小程序开发](https://www.imooc.com/learn/974)
 - [微信小程序入门与实战](https://coding.imooc.com/class/chapter/75.html)
 - [微信小程序电商实战 从前端到后端的全流程精讲](https://coding.imooc.com/class/chapter/97.html)
 - [纯正商业级应用-微信小程序开发实战](https://coding.imooc.com/class/chapter/251.html)
 
-2. 公众号
+2. 微信小程序云开发
+- [微信小程序云开发－从0打造云音乐全栈小程序](https://coding.imooc.com/class/chapter/373.html)
 
+3. 微信公众号
 
 ## 04-vue
 1. vue 2.x
@@ -48,14 +50,12 @@
 - [React Hooks2小时快速入门](https://www.imooc.com/learn/1288)
 
 2. React+Ts
-- [当React遇上TypeScript开发Antd组件](https://www.imooc.com/learn/1234)
 - [React+TypeScript高仿AntDesign开发企业级UI组件库](https://coding.imooc.com/class/chapter/428.html)
-- [React 17 系统精讲 结合TS打造旅游电商平台](https://coding.imooc.com/class/chapter/475.html)
 - [React17+React Hook+TS4 最佳实践 仿 Jira 企业级项目](https://coding.imooc.com/class/chapter/482.html)
+- [React 17 系统精讲 结合TS打造旅游电商平台](https://coding.imooc.com/class/chapter/475.html)
 
 3. Ant Design Pro
 - [Umi 3+Dva入门实践 完成用户管理的CRUD应用](https://www.bilibili.com/video/BV1qz411z7s3)
-- [用 React+React Hook+Egg 造轮子 全栈开发旅游电商应用](https://coding.imooc.com/class/chapter/452.html)
 - [React+UmiJS+Antd Pro项目全程实录](https://www.bilibili.com/video/BV1i5411c7xp)
 
 ## 06-flutter
