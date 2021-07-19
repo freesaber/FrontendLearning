@@ -12,6 +12,7 @@
 - [后盾网JavaScript视频教程--guon](https://pan.baidu.com/s/1QQnz9MECdimod6tG6Cv-SA)
 
 2. es6
+- [4小时快速体验ES6-10的强大](https://www.imooc.com/learn/1222)
 - [ECMAscript6精通系列（基础篇）](https://ke.qq.com/course/386822)
 - [再学JavaScript ES(6-11)全版本语法大全](https://coding.imooc.com/class/chapter/444.html)
 
@@ -47,7 +48,7 @@
 1 React
 - [React开发简书项目 从零基础入门到实战](https://coding.imooc.com/class/chapter/229.html)
 - [React全家桶+AntD共享单车后台管理系统开发](https://coding.imooc.com/class/chapter/236.html)
-- [React Hooks2小时快速入门](https://www.imooc.com/learn/1288)
+- [React Hooks 2小时快速入门](https://www.imooc.com/learn/1288)
 
 2. React+Ts
 - [React+TypeScript高仿AntDesign开发企业级UI组件库](https://coding.imooc.com/class/chapter/428.html)
