@@ -44,6 +44,9 @@
 
 2. vue 3.x
 
+3. uni-app
+- [uni-app 快速入门 从零开始实现新闻资讯类跨端应用](https://coding.imooc.com/class/chapter/433.html)
+
 ## 05-react
 1 React
 - [React开发简书项目 从零基础入门到实战](https://coding.imooc.com/class/chapter/229.html)
