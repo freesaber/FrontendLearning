@@ -51,9 +51,9 @@
 1 React
 - [React开发简书项目 从零基础入门到实战](https://coding.imooc.com/class/chapter/229.html)
 - [React全家桶+AntD共享单车后台管理系统开发](https://coding.imooc.com/class/chapter/236.html)
-- [React Hooks 2小时快速入门](https://www.imooc.com/learn/1288)
 
-2. React+Ts
+2. React Hooks + Ts
+- [React Hooks 2小时快速入门](https://www.imooc.com/learn/1288)
 - [React+TypeScript高仿AntDesign开发企业级UI组件库](https://coding.imooc.com/class/chapter/428.html)
 - [React17+React Hook+TS4 最佳实践 仿 Jira 企业级项目](https://coding.imooc.com/class/chapter/482.html)
 - [React 17 系统精讲 结合TS打造旅游电商平台](https://coding.imooc.com/class/chapter/475.html)
