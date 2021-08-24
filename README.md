@@ -60,6 +60,7 @@
 
 3. Ant Design Pro
 - [Umi 3+Dva入门实践 完成用户管理的CRUD应用](https://www.bilibili.com/video/BV1qz411z7s3)
+- [基于Ant Design Pro v5和Formily v1的动态模型网站后台](https://www.bilibili.com/video/BV1g54y187LJ)
 - [React+UmiJS+Antd Pro项目全程实录](https://www.bilibili.com/video/BV1i5411c7xp)
 
 ## 06-flutter
