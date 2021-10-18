@@ -48,7 +48,7 @@
 - [uni-app 快速入门 从零开始实现新闻资讯类跨端应用](https://coding.imooc.com/class/chapter/433.html)
 
 ## 05-react
-1 React
+1. React
 - [React开发简书项目 从零基础入门到实战](https://coding.imooc.com/class/chapter/229.html)
 - [React全家桶+AntD共享单车后台管理系统开发](https://coding.imooc.com/class/chapter/236.html)
 
